@@ -1,9 +1,10 @@
 const express=require("express")
 
 const app=express()
-
+app.set('secret', 'iasd82h124asd23')
 app.use(require('cors')())
 app.use(express.json())
+app.use('/uploads', express.static(__dirname+'/uploads'))
 
 require('./routes/admin')(app)
 require('./plugins/db')(app)
