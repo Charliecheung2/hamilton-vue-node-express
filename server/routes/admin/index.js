@@ -1,13 +1,12 @@
 module.exports = app => {
     const express = require('express')
+    const jwt = require('jsonwebtoken')
+    const AdminUser = require('../../models/AdminUser')
+    const assert = require('http-assert')
     const router = express.Router({
         mergeParams: true
     })
-    router.post('/', async (req, res, next)=>{
-
-        await next()
-        },
-        async (req, res) => {
+    router.post('/', async (req, res) => {
         const model = await req.Model.create(req.body)
         res.send(model)
     })
@@ -22,9 +21,9 @@ module.exports = app => {
         })
     })
     router.get('/', async (req, res) => {
-        const queryOptions={}
-        if(req.Model.modelName=='Category'){
-            queryOptions.populate='parent'
+        const queryOptions = {}
+        if (req.Model.modelName == 'Category') {
+            queryOptions.populate = 'parent'
         }
         const items = await req.Model.find().setOptions(queryOptions).limit(10)
         res.send(items)
@@ -33,40 +32,48 @@ module.exports = app => {
         const model = await req.Model.findById(req.params.id)
         res.send(model)
     })
-    app.use('/admin/api/rest/:resource', async (req, res, next) => {
-            const mondelName = require('inflection').classify(req.params.resource)
-            req.Model = require(`../../models/${mondelName}`)
-            next()
-        }, router
+    //登录校验中间键
+    const authMiddleware =require('../../middleware/auth')
+
+    const resourceMiddleware =require('../../middleware/resource')
+    app.use('/admin/api/rest/:resource', authMiddleware(), resourceMiddleware(), router
     )
-    const multer=require('multer')
-    const upload=multer({dest:__dirname+'../../../uploads'})
-    app.post('/admin/api/upload', upload.single('file'), async (req, res)=>{
-        const file=req.file
+    const multer = require('multer')
+    const upload = multer({dest: __dirname + '../../../uploads'})
+
+    app.post('/admin/api/upload', authMiddleware(), upload.single('file'), async (req, res) => {
+        const file = req.file
         //接受的字段名是file，所以要改成file
-        file.url=`http://localhost:3000/uploads/${file.filename}`
+        file.url = `http://localhost:3000/uploads/${file.filename}`
         res.send(file)
     })
 
-    app.post('/admin/api/login', async (req, res)=>{
-        const {username, password}=req.body
-        const AdminUser=require('../../models/AdminUser')
-        const user=await AdminUser.findOne({username}).select('+password')
-        if(!user){
+    app.post('/admin/api/login', async (req, res) => {
+        const {username, password} = req.body
+        const user = await AdminUser.findOne({username}).select('+password')
+        assert(user, 422, '用户不存在')
+        /*if (!user) {
             return res.status(422).send({
-                message:'用户不存在'
+                message: '用户不存在'
             })
-        }
-        const isValid=require('bcrypt').compareSync(password, user.password)
-        if(!isValid){
+        }*/
+        const isValid = require('bcrypt').compareSync(password, user.password)
+        assert(isValid, 422, '密码错误')
+        /*if (!isValid) {
             return res.status(422).send({
-                message:'密码错误'
+                message: '密码错误'
             })
-        }
-        const jwt=require('jsonwebtoken')
-        const token=jwt.sign({
-            id:user._id
+        }*/
+        const jwt = require('jsonwebtoken')
+        const token = jwt.sign({
+            id: user._id
         }, app.get('secret'))
         res.send({token})
+    })
+    //错误处理函数
+    app.use(async (err, req, res, next) => {
+        res.status(err.statusCode || 500).send({
+            message: err.message
+        })
     })
 }
