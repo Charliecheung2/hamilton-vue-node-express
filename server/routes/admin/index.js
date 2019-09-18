@@ -25,7 +25,7 @@ module.exports = app => {
         if (req.Model.modelName == 'Category') {
             queryOptions.populate = 'parent'
         }
-        const items = await req.Model.find().setOptions(queryOptions).limit(10)
+        const items = await req.Model.find().setOptions(queryOptions).limit(100)
         res.send(items)
     })
     router.get('/:id', async (req, res) => {
@@ -52,18 +52,8 @@ module.exports = app => {
         const {username, password} = req.body
         const user = await AdminUser.findOne({username}).select('+password')
         assert(user, 422, '用户不存在')
-        /*if (!user) {
-            return res.status(422).send({
-                message: '用户不存在'
-            })
-        }*/
         const isValid = require('bcrypt').compareSync(password, user.password)
         assert(isValid, 422, '密码错误')
-        /*if (!isValid) {
-            return res.status(422).send({
-                message: '密码错误'
-            })
-        }*/
         const jwt = require('jsonwebtoken')
         const token = jwt.sign({
             id: user._id
