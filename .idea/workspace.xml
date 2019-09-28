@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dfd97f9e-b378-4c3d-83b7-7de681e90f8e" name="Default Changelist" comment="服务器部署和上传">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/assets/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/assets/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/views/Home.vue" afterDir="false" />
-    </list>
+    <list default="true" id="dfd97f9e-b378-4c3d-83b7-7de681e90f8e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,15 +13,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/views/ItemEdit.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="19" column="42" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/views/Login.vue">
           <provider selected="true" editor-type-id="text-editor">
@@ -87,11 +74,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/vue.config.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="140">
               <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="39" column="8" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -203,12 +199,13 @@
         <option value="$PROJECT_DIR$/web/.env.development" />
         <option value="$PROJECT_DIR$/server/index.js" />
         <option value="$PROJECT_DIR$/web/vue.config.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="394" />
-    <option name="y" value="26" />
+    <option name="x" value="768" />
+    <option name="y" value="25" />
     <option name="width" value="1352" />
     <option name="height" value="1008" />
   </component>
@@ -220,7 +217,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,26 +224,11 @@
               <item name="hamilton-vue-node-express" type="b2602c69:ProjectViewProjectNode" />
               <item name="hamilton-vue-node-express" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="hamilton-vue-node-express" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hamilton-vue-node-express" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hamilton-vue-node-express" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hamilton-vue-node-express" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hamilton-vue-node-express" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hamilton-vue-node-express" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -305,6 +286,7 @@
       <workItem from="1569244519246" duration="1665000" />
       <workItem from="1569410755218" duration="3201000" />
       <workItem from="1569617692366" duration="206000" />
+      <workItem from="1569630732252" duration="2022000" />
     </task>
     <task id="LOCAL-00001" summary="添加了LICENSE">
       <created>1567408377173</created>
@@ -348,16 +330,23 @@
       <option name="project" value="LOCAL" />
       <updated>1568766873323</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="服务器部署和上传">
+      <created>1569630860832</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1569630860832</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97316000" />
+    <option name="totallyTimeSpent" value="99338000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="394" y="27" width="1352" height="1008" extended-state="0" />
+    <frame x="768" y="25" width="1352" height="1008" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18707739" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18707739" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -369,7 +358,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32969433" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49962434" visible="true" weight="0.28056768" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49962434" visible="true" weight="0.28056768" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003756" side_tool="true" weight="0.28056768" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -389,13 +378,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="服务器部署和上传" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/middleware/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="12" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/views/About.vue">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -734,6 +716,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="39" column="8" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
         </state>
       </provider>
     </entry>
