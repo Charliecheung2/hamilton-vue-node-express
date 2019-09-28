@@ -67,17 +67,29 @@
         </div>
       </template>
     </m-list-card>
+    <m-list-card icon="card-hero" title="英雄列表" :categories="heroLists">
+      <template #items="{category}">
+        <div class="d-flex flex-wrap">
+          <div class="p-2 text-center"
+               style="width: 20%"
+               v-for="(hero, i) in category.heroList" :key="i">
+            <img :src="hero.avatar" class="w-100">
+            <div>{{hero.name}}</div>
+          </div>
+        </div>
+      </template>
+    </m-list-card>
   </div>
 </template>
 
 <script>
-  import dayjs from 'dayjs'
+    import dayjs from 'dayjs'
     // @ is an alias to /src
     export default {
-        filters:{
-          date(val){
-            return dayjs(val).format('MM/DD')
-          }
+        filters: {
+            date(val) {
+                return dayjs(val).format('MM/DD')
+            }
         },
         data() {
             return {
@@ -87,16 +99,22 @@
                     },
                     // some swiper options...
                 },
-                newCats: []
+                newCats: [],
+                heroLists: []
             }
         },
         created() {
             this.fetchNewsCats()
+            this.fetchHeroList()
         },
-        methods:{
-            async fetchNewsCats(){
-                const res=await this.$http.get('news/list')
-                this.newCats=res.data
+        methods: {
+            async fetchNewsCats() {
+                const res = await this.$http.get('news/list')
+                this.newCats = res.data
+            },
+            async fetchHeroList() {
+                const res = await this.$http.get('heros/list')
+                this.heroLists = res.data
             }
         }
     }
